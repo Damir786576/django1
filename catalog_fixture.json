@@ -1,0 +1,23 @@
+[
+{
+    "model": "catalog.product",
+    "pk": 3,
+    "fields": {
+        "name": "Колбаска",
+        "description": "Докторская колбаса",
+        "image": "",
+        "category": "",
+        "price": 0,
+        "created_at": null,
+        "updated_at": null
+    }
+},
+{
+    "model": "catalog.category",
+    "pk": 1,
+    "fields": {
+        "name": "Игрушечный магазин",
+        "description": "Мягкие игрушки"
+    }
+}
+]
