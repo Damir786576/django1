@@ -12,7 +12,7 @@ class Product(models.Model):
         verbose_name="Описание продукта", help_text="Введите описание продукта"
     )
     image = models.ImageField(
-        upload_to="catalog/image",
+        upload_to="catalog/",
         blank=True,
         null=True,
         verbose_name="Фото продукта",
@@ -35,6 +35,11 @@ class Product(models.Model):
         null=True,
         verbose_name="дата последнего изменения",
         help_text="Введите дату последнего изменения",
+    )
+    views_counter = models.PositiveIntegerField(
+        verbose_name="Счетчик просмотров",
+        help_text="Укажите количество просмотров",
+        default=0
     )
 
     class Meta:
