@@ -13,13 +13,13 @@ class BlogListView(ListView):
 
 class BlogCreateView(CreateView):
     model = Blog
-    fields = ['title', 'content', 'image',]
+    fields = ['title', 'content', 'image', ]
     success_url = reverse_lazy('blog:blog_list')
 
 
 class BlogUpdateView(UpdateView):
     model = Blog
-    fields = ['title', 'content', 'image',]
+    fields = ['title', 'content', 'image', ]
     success_url = reverse_lazy('blog:blog_list')
 
     def get_success_url(self):

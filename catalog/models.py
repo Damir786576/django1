@@ -1,6 +1,8 @@
 from django.db import models
 from django.core.validators import MaxValueValidator
 
+from users.models import User
+
 
 class Product(models.Model):
     name = models.CharField(
@@ -41,6 +43,10 @@ class Product(models.Model):
         help_text="Укажите количество просмотров",
         default=0
     )
+
+    owner = models.ForeignKey(User, verbose_name='Владелец продукта', help_text='Укажите владельца продукта', blank=True,
+                              null=True,
+                              on_delete=models.SET_NULL)
 
     class Meta:
         verbose_name = "Продукт"
