@@ -108,8 +108,8 @@ LOGOUT_REDIRECT_URL = '/'
 
 EMAIL_HOST = 'smtp.yandex.ru'
 EMAIL_PORT = 465
-EMAIL_HOST_USER = "damer.andreeff@yandex.ru"
-EMAIL_HOST_PASSWORD = "kiqcfknijzkazxcr"
+EMAIL_HOST_USER = "A1mBox620602@yandex.ru"
+EMAIL_HOST_PASSWORD = "kbcpilnmiqpepjkk"
 EMAIL_USE_TLS = False
 EMAIL_USE_SSL = True
 
