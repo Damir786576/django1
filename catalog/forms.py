@@ -1,5 +1,6 @@
 from django import forms
 from .models import Product
+from config.forms import StyleFormMixin
 
 FORBIDDEN_WORDS = [
     'казино', 'криптовалюта', 'крипта', 'биржа', 'дешево',
@@ -7,7 +8,7 @@ FORBIDDEN_WORDS = [
 ]
 
 
-class ProductForm(forms.ModelForm):
+class ProductForm(StyleFormMixin, forms.ModelForm):
     class Meta:
         model = Product
         fields = ['name', 'description', 'image', 'category', 'price']
@@ -37,3 +38,9 @@ class ProductForm(forms.ModelForm):
             raise forms.ValidationError("Цена не может быть отрицательной")
 
         return price
+
+
+class ProductModeratorForm(StyleFormMixin, forms.ModelForm):
+    class Meta:
+        model = Product
+        fields = ["description", "owner"]

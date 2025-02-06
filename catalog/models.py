@@ -44,7 +44,8 @@ class Product(models.Model):
         default=0
     )
 
-    owner = models.ForeignKey(User, verbose_name='Владелец продукта', help_text='Укажите владельца продукта', blank=True,
+    owner = models.ForeignKey(User, verbose_name='Владелец продукта', help_text='Укажите владельца продукта',
+                              blank=True,
                               null=True,
                               on_delete=models.SET_NULL)
 
@@ -52,6 +53,10 @@ class Product(models.Model):
         verbose_name = "Продукт"
         verbose_name_plural = "Продукты"
         ordering = ["name", "category"]
+        permissions = [
+            ("can_unpublish_product", "Может снять товар с публикации"),
+            ("can_delete_product", "Может удалить товар")
+        ]
 
     def __str__(self):
         return self.name
