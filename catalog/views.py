@@ -4,10 +4,14 @@ from catalog.models import Product
 from django.urls import reverse_lazy, reverse
 from catalog.forms import ProductForm, ProductModeratorForm
 from django.contrib.auth.mixins import LoginRequiredMixin
+from catalog.services import get_product_from_cache
 
 
 class ProductListView(ListView):
     model = Product
+
+    def get_queryset(self):
+        return get_product_from_cache()
 
 
 class ProductDetailView(DetailView):
